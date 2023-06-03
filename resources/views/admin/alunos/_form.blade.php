@@ -40,14 +40,15 @@
                 <div class="mt-4 flex text-sm leading-6 text-gray-600">
                     <label for="file-upload" class="relative cursor-pointer rounded-md bg-white font-semibold text-indigo-600 focus-within:outline-none focus-within:ring-2 focus-within:ring-indigo-600 focus-within:ring-offset-2 hover:text-indigo-500">
                     <span>Upload a file</span>
-                    <input id="foto" name="foto" type="file">
-                    <input type="hidden" name="foto" value="{{ isset($row->foto) ? $row->foto : '' }}">
+
+                    <input name="arquivo" type="file">
+                    <input type="hidden" name="arquivo" value="{{ isset($row->foto) ? $row->foto : '' }}">
                     </label>
                     <p class="pl-1">or drag and drop</p>
                 </div>
                 <p class="text-xs leading-5 text-gray-600">PNG, JPG, GIF up to 10MB</p>
                 </div>
-                @if( isset($linha->foto) )
+                @if( isset($row->foto) )
                     <div class="input-field">
                     <img width="150" src="{{ asset($row->foto) }}" />
                     </div>
@@ -67,7 +68,7 @@
             <div class="mt-2">
                 <input type="text" name="nome" id="nome" autocomplete="given-name" 
                 class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6 
-                " value="{{ $row->nome }}">
+                " value="{{ isset($row->foto) ? $row->foto : '' }}">
             </div>
             </div>
 

@@ -22,14 +22,14 @@ class AlunoController extends Controller
     public function store(Request $req)
     {
         $dados = $req->all();
-        if($req->hasFile('imagem')){
-            $imagem = $req->file('alunos');
+        if($req->hasFile('arquivo')){
+            $imagem = $req->file('arquivo');
             $num = rand(1111,9999);
             $dir = "img/alunos/";
             $ex = $imagem->guessClientExtension();
             $nomeImagem = "imagem_".$num.".".$ex;
             $imagem->move($dir,$nomeImagem);
-            $dados['imagem'] = $dir."/".$nomeImagem;
+            $dados['foto'] = $dir."/".$nomeImagem;
         }
         Aluno::create($dados);
         return redirect()->route('admin.alunos.index');
@@ -51,14 +51,14 @@ class AlunoController extends Controller
     public function update(Request $req, $id)
     {
         $dados = $req->all();
-        if($req->hasFile('imagem')){
-            $imagem = $req->file('imagem');
+        if($req->hasFile('arquivo')){
+            $imagem = $req->file('arquivo');
             $num = rand(1111,9999);
-            $dir = "img/cursos/";
+            $dir = "img/alunos/";
             $ex = $imagem->guessClientExtension();
             $nomeImagem = "imagem_".$num.".".$ex;
             $imagem->move($dir,$nomeImagem);
-            $dados['imagem'] = $dir."/".$nomeImagem;
+            $dados['foto'] = $dir."/".$nomeImagem;
         }
         Aluno::find($id)->update($dados); 
         return redirect()->route('admin.alunos.index');   
