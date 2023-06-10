@@ -23,18 +23,16 @@
         <!-- CSRF Token -->
         <meta name="csrf-token" content="{{ csrf_token() }}">
     </head>
-
-    <body>
-        @include('partials.header')
-
-        <main>
-            @yield('body')
-        </main>
-
-        
-        <footer>
-            @include('partials.footer')
-        </footer>
-    </body>
     
+        <body>
+            @include('partials.header')
+            <main>
+                @yield('body')
+            </main>
+
+            <footer>
+                @include('partials.footer')
+            </footer>
+            
+        </body>
 </html>
