@@ -50,16 +50,16 @@ Route::middleware('auth')->group(function () {
     Route::get('/admin/alunos', [AlunoController::class, 'index'])->name('admin.alunos.index');
     Route::get('/admin/alunos/create', [AlunoController::class, 'create'])->name('admin.alunos.create');
     Route::post('/admin/alunos', [AlunoController::class, 'store'])->name('admin.alunos.store');
-    Route::get('admin/alunos/update/{id}', [AlunoController::class, 'update'])->name('admin.alunos.update');
+    Route::put('admin/alunos/update/{id}', [AlunoController::class, 'update'])->name('admin.alunos.update');
     Route::get('/admin/alunos/edit/{id}', [AlunoController::class, 'edit'])->name('admin.alunos.edit');
-    Route::put('/admin/alunos/{id}', [AlunoController::class, 'destroy'])->name('admin.alunos.destroy');
+    Route::get('/admin/alunos/{id}', [AlunoController::class, 'destroy'])->name('admin.alunos.destroy');
 
     Route::get('/admin/cursos', [CursoController::class, 'index'])->name('admin.cursos.index');
     Route::get('/admin/cursos/create', [CursoController::class, 'create'])->name('admin.cursos.create');
     Route::post('/admin/cursos', [CursoController::class, 'store'])->name('admin.cursos.store');
-    Route::get('admin/cursos/update/{id}', [CursoController::class, 'update'])->name('admin.cursos.update');
+    Route::put('admin/cursos/update/{id}', [CursoController::class, 'update'])->name('admin.cursos.update');
     Route::get('/admin/cursos/edit/{id}', [CursoController::class, 'edit'])->name('admin.cursos.edit');
-    Route::put('/admin/cursos/{id}', [CursoController::class, 'destroy'])->name('admin.cursos.destroy');
+    Route::get('/admin/cursos/{id}', [CursoController::class, 'destroy'])->name('admin.cursos.destroy');
    
 });
 

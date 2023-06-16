@@ -45,7 +45,7 @@ class CursoController extends Controller
     public function destroy($id)
     {
         Curso::destroy($id);
-        return redirect()->route('admin.cursos.edit');
+        return redirect()->route('admin.cursos.index');
     }
 
     public function update(Request $req, $id)

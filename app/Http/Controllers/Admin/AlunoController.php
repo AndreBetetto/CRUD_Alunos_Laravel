@@ -45,7 +45,7 @@ class AlunoController extends Controller
     public function destroy($id)
     {
         Aluno::destroy($id);
-        return redirect()->route('admin.alunos.edit');
+        return redirect()->route('admin.alunos.index');
     }
 
     public function update(Request $req, $id)
